@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Dicee</title>
+    <style>
+        .container {
+            width: 70%;
+            margin: auto;
+            text-align: center;
+        }
+
+        .dice {
+            text-align: center;
+            display: inline-block;
+
+        }
+
+        body {
+            background-color: #393E46;
+        }
+
+        h1 {
+            margin: 30px;
+            font-family: 'Lobster', cursive;
+            text-shadow: 5px 0 #232931;
+            font-size: 8rem;
+            color: #4ECCA3;
+        }
+
+        p {
+            font-size: 2rem;
+            color: #4ECCA3;
+            font-family: 'Indie Flower', cursive;
+        }
+
+        img {
+            width: 80%;
+        }
+
+        footer {
+            margin-top: 18%;
+            color: #EEEEEE;
+            text-align: center;
+            font-family: 'Indie Flower', cursive;
+
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>click On Me</h1>
+
+        <div class="dice">
+            <p>Player 1</p>
+            <img class="img1" src="C:\\Users\\Romil\\OneDrive\\Desktop\\web dev\\Frontend\\HTML\\Projects\\DiceGame\\images\\dice6.png">
+        </div>
+
+        <div class="dice">
+            <p>Player 2</p>
+            <img class="img2" src="C:\\Users\\Romil\\OneDrive\\Desktop\\web dev\\Frontend\\HTML\\Projects\\DiceGame\\images\\dice6.png">
+
+        </div>
+
+    </div>
+
+    <script>
+            var n = Math.random();
+            n = n*6;
+            n = Math.floor(n);
+            // alert(n+1) + 1;
+            
+            var m = Math.floor(Math.random()*6)+1;
+
+            var image1 = document.querySelectorAll("img")[0].setAttribute("src", "C:\\Users\\Romil\\OneDrive\\Desktop\\web dev\\Frontend\\HTML\\Projects\\DiceGame\\images\\dice" + (n+1) + ".png");
+            var image2 = document.querySelectorAll("img")[1].setAttribute("src", "C:\\Users\\Romil\\OneDrive\\Desktop\\web dev\\Frontend\\HTML\\Projects\\DiceGame\\images\\dice" + m + ".png");
+
+            if(m > (n+1)) document.querySelector("h1").innerHTML = "<em>Player 2 WIN &#128681</em>";
+            else if(m < (n+1)) document.querySelector("h1").innerHTML = "<em>&#128681 Player 1 WIN</em>";
+            else document.querySelector("h1").innerHTML = "<em>DRAW &#128513</em>"
+    </script>
+</body>
+
+<footer>
+    www 🎲 App Brewery 🎲 com
+</footer>
+
+</html>
